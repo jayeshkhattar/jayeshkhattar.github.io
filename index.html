@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Jayesh Khattar</title>
+<meta name="description" content="Technology lead in Dallas. I build AI that bankers use, inside the controls a bank requires.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}
+:root{
+--bg:#E7EAE4; --bay:#F3F5F1; --card:#FBFCFA;
+--ink:#151C19; --ink-2:#45524B; --ink-3:#5B665F;
+--line:#C6CDC5; --line-2:#9AA59C;
+--accent:#2A3FB8; --accent-ink:#FFFFFF;
+--pass:#1B6B3A; --pass-bg:#D7EBDD;
+--block:#B3261E; --block-bg:#F6DAD6;
+--advise:#8A5A00; --advise-bg:#F3E3BF;
+--mark:#2A3FB8; --mark-2:#7B857F; --row-hover:#E9EDE7;
+--plate:#151C19; --plate-ink:#F3F5F1;
+--scr:#0F1518; --scr-2:#161E22; --scr-3:#202B30; --scr-line:#2E3B41;
+--scr-ink:#DCE5E1; --scr-ink-2:#93A19B; --scr-idle:#3A474D;
+--scr-pass:#7FE0A2; --scr-block:#FF8F80; --scr-block-bg:#3A1714; --scr-advise:#F2BF63; --scr-accent:#A9B8FF; --scr-accent-ink:#0E1430;
+--display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+--body:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
+--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]){
+--bg:#121617; --bay:#191F20; --card:#1F2627;
+--ink:#E7ECE8; --ink-2:#B4C0BA; --ink-3:#8D9A93;
+--line:#2E3839; --line-2:#4A5759;
+--accent:#9DAEFF; --accent-ink:#0E1430;
+--pass:#6FD394; --pass-bg:#163524;
+--block:#FF8A7C; --block-bg:#43201C;
+--advise:#F0BC5E; --advise-bg:#3A2D10;
+--mark:#7288F2; --mark-2:#6F7B76; --row-hover:#1D2425;
+--plate:#E7ECE8; --plate-ink:#121617;
+--scr:#0A0F11;
+color-scheme:dark;
+}
+}
+:root[data-theme="dark"]{
+--bg:#121617; --bay:#191F20; --card:#1F2627;
+--ink:#E7ECE8; --ink-2:#B4C0BA; --ink-3:#8D9A93;
+--line:#2E3839; --line-2:#4A5759;
+--accent:#9DAEFF; --accent-ink:#0E1430;
+--pass:#6FD394; --pass-bg:#163524;
+--block:#FF8A7C; --block-bg:#43201C;
+--advise:#F0BC5E; --advise-bg:#3A2D10;
+--mark:#7288F2; --mark-2:#6F7B76; --row-hover:#1D2425;
+--plate:#E7ECE8; --plate-ink:#121617;
+--scr:#0A0F11;
+color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+code,.mono{font-family:var(--mono);font-size:.86em}
+.page{max-width:1120px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px);padding-block:20px 72px;display:flex;flex-direction:column}
+.plate{display:inline-block;background:var(--plate);color:var(--plate-ink);font:600 13px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;padding:6px 10px 5px;border-radius:2px}
+.mast{display:flex;flex-direction:column;gap:26px;padding-block:8px 48px}
+.mast-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.who{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font:500 14px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.nav{display:flex;flex-wrap:wrap;gap:4px 18px;font:500 14px/1 var(--display);letter-spacing:.12em;text-transform:uppercase}
+.nav a{color:var(--ink-2);text-decoration:none;padding-block:6px}
+.nav a:hover{color:var(--accent)}
+h1{font:600 clamp(2.45rem,6vw,4.4rem)/.98 var(--display);letter-spacing:-.01em;margin:0;text-wrap:balance;max-width:27ch}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:1.12rem;line-height:1.5;color:var(--ink-2);max-width:64ch}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);margin:0;padding:0}
+.fact{padding:16px 18px 14px;border-left:1px solid var(--line);display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:4px;min-width:0}
+.fact:first-child{border-left:0;padding-left:0}
+.fact dd{margin:0;font:600 2rem/1.05 var(--body);letter-spacing:-.01em}
+.fact dd i{font-style:normal;color:var(--ink-3);font-weight:400;padding-inline:.12em}
+.fact dt{font-size:.84rem;line-height:1.35;color:var(--ink-3)}
+.bay{border-top:1px solid var(--line-2);padding-block:52px;display:flex;flex-direction:column;gap:24px;scroll-margin-top:12px}
+.bay-head{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+h2{font:600 clamp(1.9rem,4vw,2.9rem)/1.02 var(--display);margin:0;text-wrap:balance;max-width:26ch;letter-spacing:-.005em}
+.bay-head p{max-width:66ch;color:var(--ink-2)}
+h3{font:600 1.5rem/1.1 var(--display);margin:0;text-wrap:balance}
+.note{font-size:.86rem;line-height:1.45;color:var(--ink-3);max-width:70ch}
+.console{background:var(--scr);color:var(--scr-ink);border:1px solid var(--scr-line);border-radius:6px;overflow:hidden}
+.console :focus-visible{outline-color:var(--scr-accent)}
+.con-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding:10px 16px;border-bottom:1px solid var(--scr-line);background:var(--scr-2)}
+.con-title{font:500 12.5px/1.3 var(--mono);color:var(--scr-ink-2)}
+.con-ctl{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font:600 14px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:8px 14px 7px;border-radius:3px;border:1px solid var(--scr-line);background:transparent;color:var(--scr-ink);cursor:pointer}
+.btn:hover{border-color:var(--scr-ink-2)}
+.btn.primary{background:var(--scr-accent);border-color:var(--scr-accent);color:var(--scr-accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.con-body{display:grid;grid-template-columns:292px minmax(0,1fr)}
+.pickcol{border-right:1px solid var(--scr-line);background:var(--scr-2);min-width:0}
+.picker{display:flex;flex-direction:column;position:sticky;top:env(safe-area-inset-top,0px)}
+.pick{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:5px;padding:13px 16px 12px;border-bottom:1px solid var(--scr-line);color:var(--scr-ink)}
+.pick:hover{background:var(--scr-3)}
+.pick[aria-pressed="true"]{background:var(--scr);box-shadow:inset 0 0 0 1px var(--scr-accent)}
+.pick:focus-visible{outline:2px solid var(--scr-accent);outline-offset:-2px}
+.pick-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 8px}
+.pick-sym{font:600 1.35rem/1 var(--display);letter-spacing:.02em}
+.pick-sym small{font:500 .78rem/1 var(--display);letter-spacing:.14em;color:var(--scr-ink-2);margin-left:6px}
+.pick-meta{font:400 12px/1.35 var(--mono);color:var(--scr-ink-2)}
+.chip{display:inline-flex;align-items:center;gap:6px;font:600 12px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;padding:4px 7px 3px;border-radius:2px;border:1px solid currentColor;white-space:nowrap}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.chip.pass{color:var(--scr-pass)} .chip.block{color:var(--scr-block)} .chip.advise{color:var(--scr-advise)}
+.stagebox{min-width:0;display:flex;flex-direction:column}
+.rail{list-style:none;margin:0;padding:18px 16px 14px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));position:relative;border-bottom:1px solid var(--scr-line)}
+.rail::before{content:"";position:absolute;left:calc(16px + (100% - 32px)/14);right:calc(16px + (100% - 32px)/14);top:25px;height:2px;background:var(--scr-line)}
+.rail li{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0;font:600 12px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--scr-ink-2)}
+.rail li i{width:16px;height:16px;border-radius:50%;background:var(--scr-idle);border:3px solid var(--scr);box-sizing:content-box;margin:-3px}
+.rail li.ok{color:var(--scr-ink)} .rail li.ok i{background:var(--scr-pass);box-shadow:0 0 10px -1px var(--scr-pass)}
+.rail li.advise{color:var(--scr-ink)} .rail li.advise i{background:var(--scr-advise);box-shadow:0 0 10px -1px var(--scr-advise)}
+.rail li.block{color:var(--scr-ink)} .rail li.block i{background:var(--scr-block);box-shadow:0 0 10px -1px var(--scr-block)}
+.rail li.dim{color:var(--scr-ink-2)} .rail li.dim i{background:var(--scr-idle);box-shadow:none}
+.verdict{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px 16px;border-bottom:1px solid var(--scr-line)}
+.verdict p{font-size:.97rem;line-height:1.45;flex:1 1 320px;min-width:0}
+.steps{list-style:none;margin:0;padding:6px 16px 16px;display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:76px minmax(0,1fr);gap:4px 14px;padding-block:14px;border-top:1px solid var(--scr-line);transition:opacity .25s}
+.step:first-child{border-top:0}
+.step.dim{opacity:.22}
+.step time{font:400 12.5px/1.6 var(--mono);color:var(--scr-ink-2)}
+.step-body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.step h4{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font:600 1.02rem/1.1 var(--display);letter-spacing:.1em;text-transform:uppercase}
+.step h4 span{font:400 12px/1 var(--mono);letter-spacing:0;text-transform:none;color:var(--scr-ink-2)}
+.step p{font-size:.95rem;line-height:1.5;max-width:70ch}
+.log{margin:0;font:400 12.5px/1.55 var(--mono);color:var(--scr-ink-2);background:var(--scr-2);border:1px solid var(--scr-line);border-radius:3px;padding:8px 10px;white-space:pre-wrap;overflow-wrap:break-word;word-break:normal}
+.lamps{list-style:none;margin:2px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.lamp{display:flex;align-items:center;gap:8px;min-width:0;border:1px solid var(--scr-line);border-radius:2px;padding:6px 8px 5px;font:600 12px/1.1 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--scr-ink-2);overflow-wrap:anywhere}
+.lamp i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--scr-idle)}
+.lamp.clear{color:var(--scr-ink)} .lamp.clear i{background:var(--scr-pass);box-shadow:0 0 8px var(--scr-pass)}
+.lamp.fired{color:var(--scr-ink);border-color:var(--scr-block);background:var(--scr-block-bg)} .lamp.fired i{background:var(--scr-block);box-shadow:0 0 10px var(--scr-block)}
+.lamp-cap{font:400 12px/1.4 var(--mono);color:var(--scr-ink-2)}
+.con-foot{padding:10px 16px;border-top:1px solid var(--scr-line);background:var(--scr-2);font:400 12px/1.5 var(--mono);color:var(--scr-ink-2)}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"out why" "judge why";gap:36px 40px;align-items:start}
+.p-out{grid-area:out} .p-why{grid-area:why} .p-judge{grid-area:judge}
+.panel{display:flex;flex-direction:column;gap:12px;min-width:0}
+.panel h3 small{display:block;font:400 .86rem/1.4 var(--body);color:var(--ink-3);margin-top:6px;letter-spacing:0}
+.bars{width:100%;border-collapse:collapse;table-layout:fixed}
+.bars th,.bars td{padding:8px 0;border-top:1px solid var(--line);vertical-align:middle;text-align:left}
+.bars thead th{border-top:0;font:500 12px/1.2 var(--mono);color:var(--ink-3);padding-bottom:6px}
+.bars thead th:last-child{width:52%}
+.bars tbody th{font-weight:500;font-size:.95rem;line-height:1.3;padding-right:14px}
+.bars tbody th small{display:block;font-weight:400;font-size:.8rem;line-height:1.35;color:var(--ink-3)}
+.bars tbody tr:hover{background:var(--row-hover)}
+.barcell{display:flex;align-items:center;gap:8px}
+.bar{display:block;height:14px;min-width:2px;width:calc((100% - 44px) * var(--f));background:var(--mark-2);border-radius:0 4px 4px 0}
+.bars tr.hi .bar{background:var(--mark)}
+.bars tbody tr:hover .bar{filter:brightness(1.12)}
+.val{font:500 .9rem/1 var(--body);font-variant-numeric:tabular-nums;min-width:36px}
+.tally{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.tally div{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:2px;padding:12px 14px;border-left:1px solid var(--line);min-width:0}
+.tally div:first-child{border-left:0;padding-left:0}
+.tally dd{margin:0;font:600 1.7rem/1.05 var(--body)}
+.tally dt{font-size:.82rem;color:var(--ink-3)}
+.p-judge{border-top:1px solid var(--line-2);padding-top:24px}
+.p-judge p{max-width:62ch;color:var(--ink-2);font-size:.97rem}
+.rules{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:32px 48px;align-items:start}
+.inv{margin:0;padding:0;list-style:none;counter-reset:inv;display:flex;flex-direction:column}
+.inv li{counter-increment:inv;display:grid;grid-template-columns:34px minmax(0,1fr);gap:2px 10px;padding-block:14px;border-top:1px solid var(--line)}
+.inv li:first-child{border-top:0;padding-top:0}
+.inv li::before{content:counter(inv);font:600 1.5rem/1 var(--display);color:var(--ink-3)}
+.inv b{font-weight:600;display:block}
+.inv span{display:block;color:var(--ink-2);font-size:.94rem;line-height:1.5;margin-top:3px}
+figure{margin:0;display:flex;flex-direction:column;gap:10px}
+figcaption{font-size:.84rem;line-height:1.45;color:var(--ink-3)}
+.dg{display:block;width:100%;max-width:360px;height:auto;color:var(--ink)}
+.dg-box{fill:var(--card);stroke:var(--line-2);stroke-width:1}
+.dg-key{fill:var(--card);stroke:var(--accent);stroke-width:2}
+.dg-j{fill:var(--bay);stroke:var(--line-2);stroke-width:1}
+.dg-t{font:600 13px var(--body);fill:var(--ink)}
+.dg-s{font:400 11px var(--body);fill:var(--ink-3)}
+.dg-l{font:400 11px var(--mono);fill:var(--ink-3)}
+.dg-a{font:600 11px var(--display);letter-spacing:.12em;fill:var(--accent)}
+.dg-line{stroke:var(--ink-3);stroke-width:1.2;fill:none}
+.dg-head{fill:var(--ink-3)}
+.incs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.inc{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.inc-date{font:500 12.5px/1 var(--mono);color:var(--ink-3)}
+.gap{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 12px;align-items:baseline;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:12px}
+.gap dt{font:600 12px/1.3 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+.gap dd{margin:0;font:400 .84rem/1.5 var(--mono);overflow-wrap:anywhere}
+.gap dd.said{color:var(--pass)} .gap dd.was{color:var(--block)}
+.inc p{font-size:.95rem;line-height:1.55;color:var(--ink-2)}
+.fix{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:.92rem;line-height:1.45}
+.fix li{position:relative;padding-left:22px}
+.fix li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--accent);border-radius:1px}
+.fix-h{font:600 12px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.rulebook{display:flex;flex-direction:column;margin:0;padding:0;list-style:none}
+.rule{display:grid;grid-template-columns:230px minmax(0,1fr);gap:6px 28px;padding-block:16px;border-top:1px solid var(--line)}
+.rule-name{display:flex;flex-direction:column;gap:6px}
+.rule-name b{font:600 1.22rem/1.1 var(--display);letter-spacing:.01em}
+.rule-name span{font:400 12px/1.2 var(--mono);color:var(--ink-3)}
+.rule-text{display:flex;flex-direction:column;gap:6px;min-width:0}
+.rule-text p{max-width:66ch}
+.rule-text .why{font-size:.92rem;color:var(--ink-2)}
+.gate{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;align-items:start;border-top:1px solid var(--line-2);padding-top:28px}
+.stages{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+.stages li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;padding-block:9px;border-top:1px solid var(--line);font-size:.94rem;line-height:1.4}
+.stages li:first-child{border-top:0}
+.stages b{font:500 12.5px/1.7 var(--mono);color:var(--ink-3)}
+.col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.col p{color:var(--ink-2);max-width:60ch}
+.rows{display:flex;flex-direction:column;margin:0;padding:0;list-style:none}
+.row{display:grid;grid-template-columns:132px minmax(0,300px) minmax(0,1fr);gap:4px 24px;padding-block:14px;border-top:1px solid var(--line);font-size:.95rem;line-height:1.5}
+.row time,.row .yrs{font:400 12.5px/1.8 var(--mono);color:var(--ink-3)}
+.row b{font-weight:600}
+.row b small{display:block;font-weight:400;font-size:.86rem;color:var(--ink-3)}
+.row p{color:var(--ink-2)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card p{font-size:.95rem;line-height:1.55;color:var(--ink-2)}
+.card .yrs{font:500 12.5px/1 var(--mono);color:var(--ink-3)}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:start}
+.reach{margin:0;display:flex;flex-direction:column}
+.reach div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:center;padding-block:12px;border-top:1px solid var(--line)}
+.reach div:first-child{border-top:0;padding-top:0}
+.reach dt{font:600 12px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.reach dd{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;min-width:0;overflow-wrap:anywhere}
+.copy{font:600 12px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:6px 9px 5px;border-radius:3px;border:1px solid var(--line-2);background:transparent;color:var(--ink-2);cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+.foot{border-top:1px solid var(--line-2);padding-top:20px;font-size:.84rem;line-height:1.5;color:var(--ink-3);max-width:80ch}
+@media (max-width:900px){
+.con-body{grid-template-columns:minmax(0,1fr)}
+.pickcol{border-right:0;border-bottom:1px solid var(--scr-line)}
+.picker{position:static;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.pick{border-bottom:0;border-right:1px solid var(--scr-line);padding:12px 6px 10px;justify-items:center;text-align:center}
+.pick:last-child{border-right:0}
+.pick-top{flex-direction:column;align-items:center;gap:8px}
+.pick-sym small{display:block;margin:5px 0 0}
+.pick-meta{display:none}
+.rules{grid-template-columns:minmax(0,1fr)}
+.split{grid-template-columns:minmax(0,1fr);grid-template-areas:"out" "why" "judge"}
+.gate,.contact{grid-template-columns:minmax(0,1fr)}
+.incs,.two{grid-template-columns:minmax(0,1fr)}
+.rule{grid-template-columns:minmax(0,1fr)}
+.row{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:720px){
+.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fact{padding:14px 12px 12px}
+.fact:nth-child(odd){border-left:0;padding-left:0}
+.fact:nth-child(n+3){border-top:1px solid var(--line)}
+.fact dd{font-size:1.65rem}
+.bay{padding-block:40px}
+.pick .chip{font-size:0;letter-spacing:0;border:0;padding:0;gap:0}
+.rail{padding-inline:8px}
+.rail::before{left:calc(8px + (100% - 16px)/14);right:calc(8px + (100% - 16px)/14)}
+.rail li{font-size:11px;letter-spacing:.04em}
+.step{grid-template-columns:minmax(0,1fr)}
+.steps{padding-inline:12px}
+.lamps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bars thead th:last-child{width:46%}
+}
+@media (prefers-reduced-motion: reduce){ .step{transition:none} }
+.chip.info{color:var(--scr-accent)}
+.pick-name{font:600 1.18rem/1.1 var(--display);letter-spacing:.01em}
+.rail{grid-template-columns:repeat(var(--n,7),minmax(0,1fr))}
+.rail::before{left:calc(16px + (100% - 32px)/(2*var(--n,7)));right:calc(16px + (100% - 32px)/(2*var(--n,7)))}
+.ctl{margin:0;font:400 12.5px/1.55 var(--mono);color:var(--scr-ink-2);background:var(--scr-2);border:1px solid var(--scr-line);border-radius:3px;padding:8px 10px;overflow-wrap:break-word}
+.ctl b{font-weight:500;color:var(--scr-ink);margin-right:8px}
+.built{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+.built li{display:flex;flex-direction:column;gap:5px;padding-block:15px;border-top:1px solid var(--line)}
+.built li:first-child{border-top:0;padding-top:0}
+.built b{font:600 1.25rem/1.1 var(--display);letter-spacing:.01em}
+.built span{color:var(--ink-2);font-size:.96rem;line-height:1.5;max-width:64ch}
+.dg-m{font:600 11px var(--display);letter-spacing:.12em;fill:var(--ink-3)}
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.way{display:flex;flex-direction:column;gap:8px;padding-block:18px;border-top:1px solid var(--line)}
+.way p{color:var(--ink-2);max-width:56ch}
+.stack{margin:0;display:flex;flex-direction:column}
+.stack div{display:grid;grid-template-columns:170px minmax(0,1fr);gap:6px 24px;padding-block:13px;border-top:1px solid var(--line)}
+.stack dt{font:600 12px/1.7 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.stack dd{margin:0;font-size:.97rem;line-height:1.5}
+.more{font-weight:500}
+@media (min-width:901px){ .rules figure{position:sticky;top:16px} }
+@media (max-width:900px){
+.picker{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pick-name{font-size:1.02rem}
+.ways{grid-template-columns:minmax(0,1fr)}
+.stack div{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:720px){
+.rail::before{left:calc(8px + (100% - 16px)/(2*var(--n,7)));right:calc(8px + (100% - 16px)/(2*var(--n,7)))}
+}
+a.plate{text-decoration:none}
+a.plate:hover{background:var(--accent);color:var(--accent-ink)}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line-2)}
+.topbar-in{max-width:1120px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px);display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+.topnav{display:flex;gap:0 22px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.topnav::-webkit-scrollbar{display:none}
+.topnav a{flex:none;font:500 14px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);text-decoration:none;padding:21px 0 17px;border-bottom:2px solid transparent}
+.topnav a:hover{color:var(--accent)}
+.topnav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.topnav a:focus-visible{outline-offset:-2px}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.chapter{scroll-margin-top:56px}
+.chapter.alt{background:var(--bay);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.chapter > .wrap > .bay:first-child{border-top:0}
+.bay{scroll-margin-top:60px}
+.hero{padding-block:44px 56px;display:flex;flex-direction:column;gap:24px}
+.eyebrow{font:500 14px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.jump{display:flex;flex-wrap:wrap;gap:10px}
+.jump a{display:inline-flex;align-items:center;font:600 14px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:11px 14px 10px;border-radius:3px;border:1px solid var(--line-2);color:var(--ink);background:transparent}
+.jump a:hover{border-color:var(--accent);color:var(--accent)}
+.jump a.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.jump a.primary:hover{filter:brightness(1.08);color:var(--accent-ink)}
+.ch-open{padding-block:56px 12px;display:flex;flex-direction:column;gap:22px;align-items:flex-start;scroll-margin-top:56px}
+.ch-open h2{font-size:clamp(2.3rem,5vw,3.6rem);max-width:22ch}
+.ch-open .facts{align-self:stretch}
+.subnav{display:flex;flex-wrap:wrap;gap:8px}
+.subnav a{font:600 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:9px 13px 8px;background:var(--card)}
+.subnav a:hover{color:var(--accent);border-color:var(--accent)}
+.panels{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panels li{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.panels b{font:600 1.25rem/1.1 var(--display);letter-spacing:.01em}
+.panels span{color:var(--ink-2);font-size:.95rem;line-height:1.5}
+.site-foot{border-top:1px solid var(--line-2);padding-block:24px 64px;font-size:.84rem;line-height:1.5;color:var(--ink-3)}
+.site-foot p{max-width:86ch}
+.site-foot p + p{margin-top:8px}
+@media (max-width:900px){
+.console.job .picker{grid-template-columns:repeat(3,minmax(0,1fr))}
+.console.ml .picker{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media (max-width:640px){
+.topbar .plate{display:none}
+.topbar-in{min-height:48px}
+.topnav a{padding:17px 0 13px}
+.chapter,.ch-open{scroll-margin-top:48px}
+.bay{scroll-margin-top:52px}
+.panels{grid-template-columns:minmax(0,1fr)}
+.hero{padding-block:28px 44px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+<a class="plate" href="#top">Jayesh Khattar</a>
+<nav class="topnav" aria-label="Sections">
+<a href="#work">Work</a>
+<a href="#moneyloop">Trading platform</a>
+<a href="#projects">Projects</a>
+<a href="#career">Career</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<header class="hero" id="top">
+<span class="eyebrow">Technology lead · Dallas, TX</span>
+<h1>I build AI that bankers use, <em>inside the controls a bank requires.</em></h1>
+<p class="lead">I'm a technology lead with Infosys, embedded at Citizens Bank. Since 2025 I've built and run the AI assistant that about 200 to 300 private-banking and treasury bankers use. Since 2023 I've led development on the Salesforce platform it sits on. On my own time I built MoneyLoop, a trading platform where every order has to get past one authorizer.</p>
+<div class="jump">
+<a class="primary" href="#assistant">The AI assistant</a>
+<a href="#moneyloop">MoneyLoop trading platform</a>
+<a href="#contact">Contact</a>
+</div>
+<dl class="facts">
+<div class="fact"><dt>bankers using the assistant, nationwide</dt><dd>200<i>–</i>300</dd></div>
+<div class="fact"><dt>evaluation questions every release has to pass</dt><dd>120</dd></div>
+<div class="fact"><dt>users on the two Private Banking platforms where I'm lead developer</dt><dd>1,000+</dd></div>
+<div class="fact"><dt>years of enterprise software, with teams of 10+ engineers led</dt><dd>10</dd></div>
+</dl>
+</header>
+</div>
+<main>
+<div class="chapter" id="work"><div class="wrap">
+<section class="bay" id="assistant" aria-labelledby="h-assistant">
+<div class="bay-head">
+<span class="plate">Citizens Bank · 2025 to now</span>
+<h2 id="h-assistant">The AI assistant for bankers</h2>
+<p>It puts a client's profile, financials, transaction history and documents in one place, surfaces deposit opportunities, and carries treasury onboarding through to the downstream records a person used to create by hand. I worked with the bankers and operations teams to pick the workflows worth automating, then owned it from design through release and production support.</p>
+</div>
+<div class="console job" id="con-job">
+<div class="con-head">
+<span class="con-title">three paths through the assistant · stages as built</span>
+<div class="con-ctl">
+<button type="button" class="btn primary" data-r="play" id="job-play">Play</button>
+<button type="button" class="btn" data-r="step" id="job-step">Step</button>
+<button type="button" class="btn" data-r="all" id="job-all">Show all</button>
+</div>
+</div>
+<div class="con-body">
+<div class="pickcol"><div class="picker" data-r="picker" role="group" aria-label="Pick a path"></div></div>
+<div class="stagebox">
+<ol class="rail" data-r="rail" aria-label="Stages"></ol>
+<div class="verdict" data-r="verdict" aria-live="polite"></div>
+<ol class="steps" data-r="steps"></ol>
+</div>
+</div>
+<div class="con-foot">The bank's data and screens stay at the bank. These are the stages of the system and the controls on each one.</div>
+</div>
+<div class="rules">
+<div class="panel">
+<h3>What I built</h3>
+<ul class="built">
+<li><b>The agent</b><span>A stateful LangGraph workflow. It calls tools for customer-data retrieval, transaction analysis, document review, policy retrieval and onboarding actions, with schema validation, retries, persistent state, human-approval gates and an auditable history.</span></li>
+<li><b>Retrieval</b><span>Hybrid indexes (BM25 plus semantic search, reranking, relevance thresholds, caching) over about 4,000 sections from up to 500 documents across three or four internal systems per deployment, and the pipeline that processes, chunks, embeds and refreshes them.</span></li>
+<li><b>The evaluation gate</b><span>120 representative banker and treasury questions, scored on relevance, grounding, source attribution, tool selection and structured-output compliance. It runs in CI/CD as the promotion gate to Kubernetes, ahead of expert sign-off.</span></li>
+<li><b>Observability</b><span>Langfuse tracing of prompts, retrieved evidence, routing decisions, tool calls, latency, token usage and errors. I use production traces to reproduce the defects bankers report.</span></li>
+<li><b>Controls</b><span>Typed, schema-validated tools over internal REST APIs, PostgreSQL, document stores and Salesforce, with scoped credentials, per-call audit logging and PII handling.</span></li>
+<li><b>The services around it</b><span>Python (FastAPI) and Java (Spring Boot) services, responses streamed to a React and Next.js client, Kafka consumers for core-banking events with idempotency and dead-letter handling, Temporal for long-running workflows, and Kubernetes promotion across dev, test and prod.</span></li>
+</ul>
+</div>
+<figure>
+<svg class="dg" viewBox="0 0 360 604" role="img" aria-label="A banker's question goes from the chat UI to the assistant API, to the LangGraph agent, to typed tools over bank systems. Actions pass an approval gate before records are created. Every stage is traced in Langfuse. Separately, every change passes the evaluation gate and expert sign-off before promotion on Kubernetes.">
+<defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="dg-head"/></marker></defs>
+<rect class="dg-j" x="292" y="89" width="60" height="384" rx="3"/>
+<text class="dg-s" transform="translate(326 281) rotate(90)" text-anchor="middle">Langfuse traces</text>
+<g>
+<rect class="dg-box" x="8" y="8" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="28">Banker</text><text class="dg-s" x="20" y="44">chat UI in React and Next.js</text>
+<rect class="dg-box" x="8" y="89" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="109">Assistant API</text><text class="dg-s" x="20" y="125">FastAPI, streams the answer over SSE</text>
+<rect class="dg-key" x="8" y="170" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="190">LangGraph agent</text><text class="dg-s" x="20" y="206">plans, calls tools, keeps state</text>
+<rect class="dg-box" x="8" y="251" width="244" height="60" rx="3"/>
+<text class="dg-t" x="20" y="271">Typed tools over bank systems</text><text class="dg-s" x="20" y="287">customer data · transactions</text><text class="dg-s" x="20" y="301">documents · policy retrieval</text>
+<rect class="dg-box" x="8" y="346" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="366">Approval gate</text><text class="dg-s" x="20" y="382">a person approves before records change</text>
+<rect class="dg-box" x="8" y="427" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="447">Onboarding actions</text><text class="dg-s" x="20" y="463">downstream records created</text>
+</g>
+<g class="dg-line" marker-end="url(#ah)">
+<line x1="60" y1="54" x2="60" y2="88"/><line x1="60" y1="135" x2="60" y2="169"/><line x1="60" y1="216" x2="60" y2="250"/>
+<line x1="60" y1="311" x2="60" y2="345"/><line x1="60" y1="392" x2="60" y2="426"/>
+<line x1="252" y1="112" x2="291" y2="112"/><line x1="252" y1="193" x2="291" y2="193"/><line x1="252" y1="281" x2="291" y2="281"/>
+<line x1="252" y1="369" x2="291" y2="369"/><line x1="252" y1="450" x2="291" y2="450"/>
+</g>
+<text class="dg-l" x="72" y="76">question</text>
+<text class="dg-l" x="72" y="157">request</text>
+<text class="dg-l" x="72" y="238">tool calls, validated</text>
+<text class="dg-l" x="72" y="333">proposed actions</text>
+<text class="dg-l" x="72" y="414">approved</text>
+<text class="dg-a" x="252" y="164" text-anchor="end">STATE: POSTGRESQL</text>
+<text class="dg-m" x="8" y="518">EVERY CHANGE, BEFORE IT SHIPS</text>
+<g>
+<rect class="dg-box" x="8" y="528" width="104" height="46" rx="3"/>
+<text class="dg-t" x="18" y="548">Eval gate</text><text class="dg-s" x="18" y="564">120 questions</text>
+<rect class="dg-box" x="128" y="528" width="104" height="46" rx="3"/>
+<text class="dg-t" x="138" y="548">Sign-off</text><text class="dg-s" x="138" y="564">bank experts</text>
+<rect class="dg-box" x="248" y="528" width="104" height="46" rx="3"/>
+<text class="dg-t" x="258" y="548">Kubernetes</text><text class="dg-s" x="258" y="564">dev · test · prod</text>
+</g>
+<g class="dg-line" marker-end="url(#ah)">
+<line x1="112" y1="551" x2="127" y2="551"/><line x1="232" y1="551" x2="247" y2="551"/>
+</g>
+</svg>
+<figcaption>The request path on top, the release path underneath. Actions that change records stop at a person. Every stage is traced.</figcaption>
+</figure>
+</div>
+</section>
+<section class="bay" id="platform" aria-labelledby="h-platform">
+<div class="bay-head">
+<span class="plate">Citizens Bank · 2023 to now</span>
+<h2 id="h-platform">The Salesforce platform underneath</h2>
+<p>Private banking and treasury at the bank run on Salesforce. I'm the lead developer there, and the assistant sits on top of it.</p>
+</div>
+<ul class="rulebook">
+<li class="rule">
+<div class="rule-name"><b>Treasury and deposit onboarding</b><span>OmniStudio · Financial Services Cloud</span></div>
+<div class="rule-text"><p>Lead developer for onboarding, built on OmniStudio over Financial Services Cloud.</p></div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>Two Private Banking platforms</b><span>Experience Cloud · Apex · 1,000+ users</span></div>
+<div class="rule-text"><p>Technical design and a large share of the Apex for two production platforms on Experience Cloud.</p></div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>Core-banking integration</b><span>MuleSoft · Platform Events</span></div>
+<div class="rule-text"><p>Events from core banking arrive through MuleSoft and Platform Events, with idempotent subscribers and dead-letter handling, so a replayed event is harmless and a failed one is set aside instead of lost.</p></div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>CI/CD from nothing</b><span>GitHub · Copado</span></div>
+<div class="rule-text"><p>Built the GitHub and Copado pipeline where none existed.</p></div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>The lead's job</b><span>reviews · design docs · L3</span></div>
+<div class="rule-text"><p>Code reviews across onshore and offshore developers, design docs and runbooks, and L3 production support.</p></div>
+</li>
+</ul>
+</section>
+<section class="bay" id="how" aria-labelledby="h-how">
+<div class="bay-head">
+<span class="plate">How I work</span>
+<h2 id="h-how">From a banker's problem to something in production</h2>
+</div>
+<div class="ways">
+<div class="way"><h3>Start with the people doing the work</h3><p>I sit with bankers and operations to find the workflows worth automating before anything gets built.</p></div>
+<div class="way"><h3>Measure before shipping</h3><p>A change runs the evaluation set first. If the gate fails, it doesn't get promoted.</p></div>
+<div class="way"><h3>Read the trace before guessing</h3><p>When a banker reports a bad answer, I reproduce it from the production trace and fix the part that failed: retrieval, orchestration or a tool.</p></div>
+<div class="way"><h3>Write it down and bring people along</h3><p>Design docs, runbooks, code and design reviews. I explain the trade-offs to product and business partners in plain terms.</p></div>
+</div>
+</section>
+</div></div>
+<div class="chapter alt" id="moneyloop"><div class="wrap">
+<div class="ch-open">
+<span class="plate">Side project · 2026</span>
+<h2 id="h-moneyloop">MoneyLoop, the trading platform I built</h2>
+<p class="lead">An autonomous trading platform on Interactive Brokers. Strategies and an LLM propose trades, one authorizer decides what gets through, and a web dashboard runs it. I built it and run it outside work. Coding agents wrote most of the code under rules I set, and every deploy runs a six-stage release gate first.</p>
+<dl class="facts">
+<div class="fact"><dt>proposals that became orders, Aug 3 to Sep 1, 2026</dt><dd>541<i>→</i>192</dd></div>
+<div class="fact"><dt>tests passing at the Sep 25 release gate</dt><dd>5,065</dd></div>
+<div class="fact"><dt>lines of Python, half of them tests</dt><dd>143k</dd></div>
+<div class="fact"><dt>commits in 12 weeks, 705 with an agent as co-author</dt><dd>987</dd></div>
+</dl>
+<nav class="subnav" aria-label="Trading platform sections">
+<a href="#ml-replay">Replay a decision</a>
+<a href="#ml-gate">The gate</a>
+<a href="#ml-arch">Architecture</a>
+<a href="#ml-station">The dashboard</a>
+<a href="#ml-incidents">Incidents</a>
+<a href="#ml-build">How it's built</a>
+</nav>
+</div>
+<section class="bay" id="ml-replay" aria-labelledby="h-ml-replay">
+<div class="bay-head">
+<span class="plate">Decision journal</span>
+<h2 id="h-ml-replay">Replay a real decision</h2>
+<p>Five decisions from August 2026, as the system logged them. Pick one and step through it. Order sizes and dollar amounts are removed. Nothing else is changed.</p>
+</div>
+<div class="console ml" id="con-ml">
+<div class="con-head">
+<span class="con-title">moneyloop_log.jsonl · times in US Central</span>
+<div class="con-ctl">
+<button type="button" class="btn primary" data-r="play" id="ml-play">Play</button>
+<button type="button" class="btn" data-r="step" id="ml-step">Step</button>
+<button type="button" class="btn" data-r="all" id="ml-all">Show all</button>
+</div>
+</div>
+<div class="con-body">
+<div class="pickcol"><div class="picker" data-r="picker" role="group" aria-label="Pick a decision"></div></div>
+<div class="stagebox">
+<ol class="rail" data-r="rail" aria-label="Pipeline stages"></ol>
+<div class="verdict" data-r="verdict" aria-live="polite"></div>
+<ol class="steps" data-r="steps"></ol>
+</div>
+</div>
+<div class="con-foot">Fields trimmed for length. Fields marked "redacted" held a quantity or a dollar amount.</div>
+</div>
+</section>
+<section class="bay" id="ml-gate" aria-labelledby="h-ml-gate">
+<div class="bay-head">
+<span class="plate">The gate</span>
+<h2 id="h-ml-gate">What stopped the other 349</h2>
+<p>From Aug 3 to Sep 1, 2026 the strategies made 541 proposals: 236 from the winners engine, 188 from mechanical strategies, 117 from the LLM trader. 192 became orders. This is what happened to the rest.</p>
+</div>
+<div class="split">
+<div class="panel p-out">
+<h3>Where each proposal ended<small>541 proposals, 19 trading days</small></h3>
+<table class="bars">
+<thead><tr><th scope="col">Outcome</th><th scope="col">Proposals</th></tr></thead>
+<tbody>
+<tr class="hi"><th scope="row">Entered<small>Became an order</small></th><td><div class="barcell"><span class="bar" style="--f:.738"></span><span class="val">192</span></div></td></tr>
+<tr><th scope="row">Guardrail reject<small>The authorizer said no</small></th><td><div class="barcell"><span class="bar" style="--f:1"></span><span class="val">260</span></div></td></tr>
+<tr><th scope="row">Underlying conflict<small>A conflicting proposal or position on the same underlying</small></th><td><div class="barcell"><span class="bar" style="--f:.181"></span><span class="val">47</span></div></td></tr>
+<tr><th scope="row">Cluster cap<small>That group of correlated names was at its limit</small></th><td><div class="barcell"><span class="bar" style="--f:.065"></span><span class="val">17</span></div></td></tr>
+<tr><th scope="row">Duplicate proposal<small>Same idea twice in one cycle</small></th><td><div class="barcell"><span class="bar" style="--f:.062"></span><span class="val">16</span></div></td></tr>
+<tr><th scope="row">Broker error<small>Approved, but the order failed at the broker</small></th><td><div class="barcell"><span class="bar" style="--f:.035"></span><span class="val">9</span></div></td></tr>
+</tbody>
+</table>
+</div>
+<div class="panel p-why">
+<h3>Which guardrail fired<small>260 rejects</small></h3>
+<table class="bars">
+<thead><tr><th scope="col">Check</th><th scope="col">Rejects</th></tr></thead>
+<tbody>
+<tr><th scope="row">Fake-move gate<small>Efficiency ratio under the floor: choppy tape</small></th><td><div class="barcell"><span class="bar" style="--f:1"></span><span class="val">70</span></div></td></tr>
+<tr><th scope="row">Already open<small>That vehicle is already held</small></th><td><div class="barcell"><span class="bar" style="--f:.986"></span><span class="val">69</span></div></td></tr>
+<tr><th scope="row">Day entry cap<small>The underlying hit its entries for the day</small></th><td><div class="barcell"><span class="bar" style="--f:.471"></span><span class="val">33</span></div></td></tr>
+<tr><th scope="row">Stop cooldown<small>Cooling off after a losing exit</small></th><td><div class="barcell"><span class="bar" style="--f:.229"></span><span class="val">16</span></div></td></tr>
+<tr><th scope="row">Instrument disabled<small>Entries switched off for that name</small></th><td><div class="barcell"><span class="bar" style="--f:.2"></span><span class="val">14</span></div></td></tr>
+<tr><th scope="row">Session disabled<small>Outside the sessions that allow entries</small></th><td><div class="barcell"><span class="bar" style="--f:.186"></span><span class="val">13</span></div></td></tr>
+<tr><th scope="row">Min order<small>Sized below the minimum order</small></th><td><div class="barcell"><span class="bar" style="--f:.171"></span><span class="val">12</span></div></td></tr>
+<tr><th scope="row">Runway<small>Too close to the end-of-day flatten</small></th><td><div class="barcell"><span class="bar" style="--f:.143"></span><span class="val">10</span></div></td></tr>
+<tr><th scope="row">Observe only<small>Operator switch: watch, no entries</small></th><td><div class="barcell"><span class="bar" style="--f:.114"></span><span class="val">8</span></div></td></tr>
+<tr><th scope="row">Max open positions<small>Every position slot in use</small></th><td><div class="barcell"><span class="bar" style="--f:.086"></span><span class="val">6</span></div></td></tr>
+<tr><th scope="row">Target lock<small>Daily target reached, done for the day</small></th><td><div class="barcell"><span class="bar" style="--f:.071"></span><span class="val">5</span></div></td></tr>
+<tr><th scope="row">AI stale anchor<small>Price moved since the model's reference; reward-to-risk fell under the floor</small></th><td><div class="barcell"><span class="bar" style="--f:.057"></span><span class="val">4</span></div></td></tr>
+</tbody>
+</table>
+</div>
+<div class="panel p-judge">
+<h3>The model judge runs in shadow<small>295 verdicts, Aug 10 to Sep 1</small></h3>
+<dl class="tally">
+<div><dt>skip</dt><dd>176</dd></div>
+<div><dt>take</dt><dd>102</dd></div>
+<div><dt>errors</dt><dd>17</dd></div>
+</dl>
+<p>An LLM judge reads each entry signal and returns take or skip with a reason. It has no authority yet. Its verdict is written into the journal next to the decision, and 55 entries went in with a skip on record. The RKLB replay above is one of them.</p>
+<p>All 17 errors degraded to pass. A model that is down can't stop the system, and a model that is wrong can't size a trade or lift a lock. On entries, the checks with authority are arithmetic.</p>
+</div>
+</div>
+</section>
+<section class="bay" id="ml-arch" aria-labelledby="h-ml-arch">
+<div class="bay-head">
+<span class="plate">Architecture</span>
+<h2 id="h-ml-arch">Eight rules it is built around</h2>
+<p>From the architecture doc. Many strategies may want a trade. Exactly one component may authorize one. The rest of the system exists to keep that true.</p>
+</div>
+<div class="rules">
+<ol class="inv">
+<li><div><b>One serialized authorizer.</b><span>Mechanical, winners and LLM entries all pass through <code>guardrails.check_order()</code>. Nothing trades around it.</span></div></li>
+<li><div><b>Protection rests at the broker, not in the process that might die.</b><span>Stop and target go in as a native OCA bracket with the entry, so they survive a crash.</span></div></li>
+<li><div><b>Risk sets size; size never sets risk.</b><span>Quantity is allowed risk divided by the distance to the stop. If the stop is too far, the trade is skipped. The stop is never widened to make a trade fit.</span></div></li>
+<li><div><b>Every decision is journaled and replayable.</b><span>Signals, vetoes, fills, exit polls and LLM calls go to an append-only log. 1,989 LLM calls are in it for Aug 12 to Sep 1, each with prompt hash, latency and cost.</span></div></li>
+<li><div><b>AI advises and may veto. It never sizes and never overrides a lock.</b><span>The model proposes entries like any other worker, judges entries in shadow, and manages stops on open positions. API error, timeout, bad JSON, refusal: every failure degrades to pass.</span></div></li>
+<li><div><b>A restart adopts state. It never orphans a position.</b><span>On boot, same-day positions are re-adopted, clamped to what the broker actually holds, and their brackets re-attached.</span></div></li>
+<li><div><b>Capture never blocks trading.</b><span>A disk fault costs history, not an exit.</span></div></li>
+<li><div><b>New strategies ship dark.</b><span>Off by default behind an environment flag, signal-only first.</span></div></li>
+</ol>
+<figure>
+<svg class="dg" viewBox="0 0 360 548" role="img" aria-label="Seven stages from market data to position management. The DecisionEngine is the only stage that can authorize an order. Strategy workers, the proposal pool, the DecisionEngine, the broker and the position manager all write to the decision journal.">
+<defs><marker id="ah2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="dg-head"/></marker></defs>
+<rect class="dg-j" x="292" y="8" width="60" height="532" rx="3"/>
+<text class="dg-s" transform="translate(326 274) rotate(90)" text-anchor="middle">decision journal, append-only</text>
+<g>
+<rect class="dg-box" x="8" y="8" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="28">IB Gateway</text><text class="dg-s" x="20" y="44">market data</text>
+<rect class="dg-box" x="8" y="89" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="109">BarRouter</text><text class="dg-s" x="20" y="125">closed bars only, deduped</text>
+<rect class="dg-box" x="8" y="170" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="190">Strategy workers</text><text class="dg-s" x="20" y="206">mechanical · winners · LLM trader</text>
+<rect class="dg-box" x="8" y="251" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="271">Proposal pool</text><text class="dg-s" x="20" y="287">ranked, cluster caps, conflicts</text>
+<rect class="dg-key" x="8" y="332" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="352">DecisionEngine</text><text class="dg-s" x="20" y="368">check_order() + risk-first sizing</text>
+<rect class="dg-box" x="8" y="413" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="433">Broker</text><text class="dg-s" x="20" y="449">Adaptive limit + OCA bracket</text>
+<rect class="dg-box" x="8" y="494" width="244" height="46" rx="3"/>
+<text class="dg-t" x="20" y="514">PositionManager</text><text class="dg-s" x="20" y="530">trail, time stop, end-of-day flatten</text>
+</g>
+<g class="dg-line" marker-end="url(#ah2)">
+<line x1="60" y1="54" x2="60" y2="88"/><line x1="60" y1="135" x2="60" y2="169"/><line x1="60" y1="216" x2="60" y2="250"/>
+<line x1="60" y1="297" x2="60" y2="331"/><line x1="60" y1="378" x2="60" y2="412"/><line x1="60" y1="459" x2="60" y2="493"/>
+<line x1="252" y1="193" x2="291" y2="193"/><line x1="252" y1="274" x2="291" y2="274"/>
+<line x1="252" y1="355" x2="291" y2="355"/><line x1="252" y1="436" x2="291" y2="436"/><line x1="252" y1="517" x2="291" y2="517"/>
+</g>
+<text class="dg-l" x="72" y="76">bars</text>
+<text class="dg-l" x="72" y="157">closed bars</text>
+<text class="dg-l" x="72" y="238">proposals</text>
+<text class="dg-l" x="72" y="319">ranked</text>
+<text class="dg-l" x="72" y="400">approved + sized</text>
+<text class="dg-l" x="72" y="481">fills, ticks</text>
+<text class="dg-a" x="252" y="325" text-anchor="end">ONLY AUTHORIZER</text>
+</svg>
+<figcaption>Seven stages, one authorizer. Signals, decisions, fills and exits all go to the journal, which is what the replay above reads.</figcaption>
+</figure>
+</div>
+<p class="note">The same doc has a section called "Known structural debt". Its first line: the main runner file is about 5,200 lines and carries too many jobs. I would rather write that down than have you find it.</p>
+</section>
+<section class="bay" id="ml-station" aria-labelledby="h-ml-station">
+<div class="bay-head">
+<span class="plate">The dashboard</span>
+<h2 id="h-ml-station">Trade Station, the console that runs it</h2>
+<p>A React and Vite dashboard over a FastAPI back end, on my own domain, with updates pushed over a WebSocket. Three views (the trading desk, AI Trades and Performance) and a layout for the phone.</p>
+</div>
+<ul class="panels">
+<li><b>Trading desk</b><span>Watchlist, live chart, order history and news, with the account figures: net liquidation, today's P&amp;L, open P&amp;L, cash and buying power.</span></li>
+<li><b>Trade ticket</b><span>Manual orders, including limit and stop orders in pre-market, post-market and 24-hour sessions. Nothing is sent until you confirm it.</span></li>
+<li><b>Kill switch</b><span>In the top bar on every view. Halting takes a confirmation and stops automated entries, because the bot's KILL_SWITCH guardrail reads the same flag. While halted, a red banner runs across the top of the app, even if the halt came from another device. Resuming takes its own confirmation.</span></li>
+<li><b>Observe-only</b><span>One switch puts the bot in observe-only mode: it keeps writing signals and places no orders.</span></li>
+<li><b>AI Trades and Performance</b><span>A view of what the LLM trader did, and a P&amp;L performance view.</span></li>
+<li><b>Locked down</b><span>Protected API routes refuse anyone without a PIN session. If the PIN isn't configured, they refuse everyone instead of opening. The public health check answers only {"ok": true}.</span></li>
+</ul>
+<p class="note">The dashboard shows live account figures, so it stays private and isn't linked here.</p>
+</section>
+<section class="bay" id="ml-incidents" aria-labelledby="h-ml-inc">
+<div class="bay-head">
+<span class="plate">Incidents</span>
+<h2 id="h-ml-inc">Four things that broke, and what changed</h2>
+<p>Three of these are the system saying it was fine when it wasn't. Dates and numbers come from the repo: the incident docs, the commit messages, and the comments left in the unit files.</p>
+</div>
+<div class="incs">
+<article class="inc">
+<span class="inc-date">2026-08-05</span>
+<h3>Heartbeat green, feed dead</h3>
+<dl class="gap">
+<dt>It said</dt><dd class="said">heartbeat every 60 s, no alerts</dd>
+<dt>It was</dt><dd class="was">no market data from 07:58 on. A full session, zero trades.</dd>
+</dl>
+<p>The same broker username logged in somewhere else. The broker allows one market-data session per username, so all 27 of the bot's subscriptions were refused in one burst (Error 10197). Those errors arrive on an async event, after the subscribe call has already returned, and nothing retried. The stale-feed detector built after an earlier outage in July did not catch it.</p>
+<span class="fix-h">Changed</span>
+<ul class="fix">
+<li>The feed listens for async errors and keeps a set of subscriptions it expects to be alive.</li>
+<li>Stale subscriptions are re-subscribed instead of trusted.</li>
+<li>The heartbeat carries a FEED=DEAD state and repeats the alert.</li>
+<li>13 tests, grouped by the four parts of the fix.</li>
+</ul>
+</article>
+<article class="inc">
+<span class="inc-date">2026-08-14</span>
+<h3>"Deployed" printed over a crash loop</h3>
+<dl class="gap">
+<dt>It said</dt><dd class="said">✓ moneyloop deployed</dd>
+<dt>It was</dt><dd class="was">dead for 22 hours. 7,581 restarts. No alert.</dd>
+</dl>
+<p>The deploy shipped a file that imported a module sitting uncommitted in my working tree. The service died on import and systemd restarted it every 10 seconds. With <code>Restart=always</code> and <code>RestartSec=10</code>, the default limit of 5 starts in 10 seconds can never trip, so the unit never becomes failed and <code>OnFailure</code> never fires. The deploy script ended in <code>systemctl is-active || true</code>, which swallowed "activating".</p>
+<span class="fix-h">Changed</span>
+<ul class="fix">
+<li>Deploy imports the package from a throwaway worktree at HEAD before it pushes. Untracked files can't be there.</li>
+<li>The verdict needs the literal word "active" and an unchanged restart counter.</li>
+<li>Units get 5 starts per 300 seconds and an OnFailure pager.</li>
+<li>OnFailure lives in [Unit]. systemd silently ignores it in [Service].</li>
+</ul>
+</article>
+<article class="inc">
+<span class="inc-date">2026-09-03</span>
+<h3>The health check that told strangers too much</h3>
+<dl class="gap">
+<dt>It said</dt><dd class="was">{"ibkr_connected": true, "market_data_syms": [...]} to anyone who asked</dd>
+<dt>Needed</dt><dd class="said">a status code for the deploy poll</dd>
+</dl>
+<p>The health route sits outside auth so the deploy poll can reach it. It was also telling the whole internet whether the broker link was up and which symbols the account subscribed to. That is the shape of the book, and the times it is weakest.</p>
+<span class="fix-h">Changed</span>
+<ul class="fix">
+<li>Strangers get <code>{"ok": true}</code>. Diagnostics need an operator session.</li>
+<li>Three days later auth was made to fail closed: with no secret configured, every protected route returns 503 instead of opening.</li>
+</ul>
+</article>
+<article class="inc">
+<span class="inc-date">2026-09-27</span>
+<h3>The backup that stamped itself fresh</h3>
+<dl class="gap">
+<dt>It said</dt><dd class="said">freshness stamp written</dd>
+<dt>It was</dt><dd class="was">an incomplete copy</dd>
+</dl>
+<p>The journal and state exist in one copy on one server, so a nightly job pulls them to another machine. One leg of that pull treated every non-zero exit as "that folder isn't there yet" and wrote the stamp anyway. The installed job had also drifted: it was four days behind the repo, still on the version without the retry loop.</p>
+<span class="fix-h">Changed</span>
+<ul class="fix">
+<li>Absence is probed explicitly. A real failure retries, then aborts before the stamp.</li>
+<li>The installed job was reinstalled from the file in the repo.</li>
+<li>Every run ends by verifying the copy it just made.</li>
+</ul>
+</article>
+</div>
+</section>
+<section class="bay" id="ml-build" aria-labelledby="h-ml-build">
+<div class="bay-head">
+<span class="plate">Coding agents</span>
+<h2 id="h-ml-build">Agents wrote most of this. Here is what keeps that safe.</h2>
+<p>705 of the repo's 987 commits carry an agent as co-author. I say what gets built, review it, and decide what merges and what deploys. The rules below are in the repo's instruction file. Each one is there because something went wrong first.</p>
+</div>
+<ul class="rulebook">
+<li class="rule">
+<div class="rule-name"><b>Claim discipline</b><span>added 2026-08-30</span></div>
+<div class="rule-text">
+<p>Below 30 decided samples, no verdict words. Every number ships with its n in the same sentence. A finding needs two independent cuts that agree. When an earlier claim flips, the message opens with the reconciliation.</p>
+<p class="why">Why: a month of confident verdicts about strategies that later reversed.</p>
+</div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>Smallest version first</b><span>added 2026-08-31</span></div>
+<div class="rule-text">
+<p>Ship the minimum that answers the question asked, and say in one line what was left out.</p>
+<p class="why">Why: I asked where the nightly learning goes. The answer was one section of stats. What came back was an all-time cut, a promotion rule, a sidecar file and 118 lines of tests, one of them for a failure the system cannot produce.</p>
+</div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>Pin the goal</b><span>added 2026-08-30</span></div>
+<div class="rule-text">
+<p>Every task starts with a one-line goal. One detour is free. A detour off a detour needs my OK. Done means the original question got answered.</p>
+<p class="why">Why: long sessions that ended somewhere else, with nothing committed and the first question still open.</p>
+</div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>Nothing ships without me</b><span>standing</span></div>
+<div class="rule-text">
+<p>Agents work on branches. Merges to main, deploys and server config changes happen only on my explicit approval. Uncommitted work is mine to discard, never theirs.</p>
+<p class="why">Why: two real incidents, a reverted strategy file and an overwritten instruction file.</p>
+</div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>Review protocol for order code</b><span>standing since 2026-07-15</span></div>
+<div class="rule-text">
+<p>One reviewable commit per critical fix. Audits are committed files, never chat. Broker and order-state code counts as reviewed only after failure injection.</p>
+</div>
+</li>
+<li class="rule">
+<div class="rule-name"><b>No broad searches</b><span>added 2026-09-27</span></div>
+<div class="rule-text">
+<p>A hook blocks agents from searching the whole tree and routes them to eleven navigation docs instead. It binds Claude, Codex and Qwen alike.</p>
+</div>
+</li>
+</ul>
+<div class="gate">
+<div class="col">
+<h3>The release gate</h3>
+<p>Every deploy runs six stages inside a throwaway worktree checked out at the exact commit about to ship. The tree that is tested is the commit that is deployed. No stage needs the broker, the database, the network or a secret.</p>
+<ol class="stages">
+<li><b>1/6</b><span>MoneyLoop unit and production-config suites</span></li>
+<li><b>2/6</b><span>API suite: auth decisions, halt scope, order routes</span></li>
+<li><b>3/6</b><span>Environment and snapshot compatibility</span></li>
+<li><b>4/6</b><span>Python lint for syntax and undefined names</span></li>
+<li><b>5/6</b><span>Frontend lint for undefined identifiers</span></li>
+<li><b>6/6</b><span>Frontend build</span></li>
+</ol>
+</div>
+<div class="col">
+<h3>Findings get worked, not filed</h3>
+<p>On Sep 1 a reviewer agent went through a seven-branch data stack before it ran against a real database. It returned seven findings: three high, three medium, one low. The two strongest were not logic bugs. One was a liveness backstop the docs relied on that did not exist anywhere in the repo.</p>
+<p>Six were fixed in code, tests or units before the next stage started. The low one was accepted as flagged, which was the reviewer's own recommendation.</p>
+<p>A deploy journal is generated automatically: 52 daily entries since Jul 31.</p>
+</div>
+</div>
+</section>
+</div></div>
+<div class="chapter" id="projects"><div class="wrap">
+<section class="bay" aria-labelledby="h-projects">
+<div class="bay-head">
+<span class="plate">Other projects</span>
+<h2 id="h-projects">Public work you can read</h2>
+</div>
+<div class="two">
+<article class="card">
+<span class="yrs">2026 · public repo</span>
+<h3>Atlas, a support agent</h3>
+<p>The one where I wrote the agent code myself, with Claude kept to scoping and review. Hybrid retrieval with reciprocal rank fusion, tools over an MCP server, and a verifier that checks every answer against its sources and hands off to a human when it can't. About 1,200 lines of Python on the raw Anthropic SDK, with a LangGraph port.</p>
+<p><a class="more" href="https://github.com/jayeshkhattar/northwind-atlas">github.com/jayeshkhattar/northwind-atlas</a></p>
+</article>
+<article class="card">
+<span class="yrs">2026 · public repo</span>
+<h3>Claude Skills</h3>
+<p>Two skills for Claude Code and the Agent SDK. Two Track Review answers any review or audit twice: a full technical write-up with findings, severity and fixes, then a short plain-language recap.</p>
+<p>System Architect runs a build request through a delivery lifecycle: pin down the input, system and output, classify the problem, look for an existing open-source solution before building anything, then architecture, a dev plan and test plan made in parallel, a build loop and QA.</p>
+<p><a class="more" href="https://github.com/jayeshkhattar/claude-skills">github.com/jayeshkhattar/claude-skills</a></p>
+</article>
+</div>
+</section>
+</div></div>
+<div class="chapter" id="career"><div class="wrap">
+<section class="bay" id="roles" aria-labelledby="h-career">
+<div class="bay-head">
+<span class="plate">Career</span>
+<h2 id="h-career">Ten years of shipping for enterprises</h2>
+</div>
+<ul class="rows" aria-label="Roles">
+<li class="row"><span class="yrs">2023 to now</span><b>Citizens Bank<small>Technology lead, via Infosys</small></b><p>The AI assistant for bankers since 2025, and the bank's Salesforce platform for private banking and treasury since 2023.</p></li>
+<li class="row"><span class="yrs">2023</span><b>Panoramic Health<small>Salesforce consultant, via Agilenautics</small></b><p>Turned clinical care protocols into production workflows for a value-based kidney-care platform. Designed the Einstein Next Best Action logic that surfaces care-team actions. Cut patient-tracking turnaround by about 50%. Led 5+ developers under HIPAA controls.</p></li>
+<li class="row"><span class="yrs">2022</span><b>Hyundai Capital Canada<small>Salesforce consultant, via OSI Digital</small></b><p>Performance-tuned three Experience Cloud orgs serving 200K+ users, and built self-service features that contributed to a lift of about 30% in engagement.</p></li>
+<li class="row"><span class="yrs">2019 to 2021</span><b>Genpact Digital<small>Technical lead</small></b><p>Led 10+ engineers across Nike, Coca-Cola and KONE engagements. Architected an accounts-receivable managed package that became one of the company's top-selling products, and set the design standards, review practice and release controls around it.</p></li>
+<li class="row"><span class="yrs">2017 to 2019</span><b>OSI Digital<small>Salesforce developer</small></b><p>Built the Hyundai Capital America dealer-rewards portal, which was handling $200K+ in monthly transaction volume at handoff, and a two-way integration between Salesforce and Google Ad Manager.</p></li>
+<li class="row"><span class="yrs">2016 to 2017</span><b>Publicis Sapient<small>Software engineer</small></b><p>Java, Spring and Hibernate back ends plus Salesforce on two enterprise engagements.</p></li>
+<li class="row"><span class="yrs">Education</span><b>Northeastern University<small>M.S. Information Systems, 2023</small></b><p>B.Tech. Computer Science, Manipal Institute of Technology, 2016.</p></li>
+<li class="row"><span class="yrs">Certifications</span><b>Salesforce and Anthropic</b><p>Salesforce Agentforce Specialist, Data Cloud Consultant, Platform Developer II and I, Administrator. Anthropic: Building with the Claude API, AI Fluency.</p></li>
+</ul>
+</section>
+<section class="bay" id="stack" aria-labelledby="h-stack">
+<div class="bay-head">
+<span class="plate">Stack</span>
+<h2 id="h-stack">What I use at work</h2>
+</div>
+<dl class="stack">
+<div><dt>AI</dt><dd>LangGraph, LangChain, Anthropic and OpenAI APIs, hybrid RAG with reranking, evaluation harnesses, Langfuse</dd></div>
+<div><dt>Back end</dt><dd>Python (FastAPI, Pydantic), Java (Spring Boot), PostgreSQL, Kafka, Temporal</dd></div>
+<div><dt>Front end</dt><dd>TypeScript, React, Next.js, Lightning Web Components</dd></div>
+<div><dt>Delivery</dt><dd>Docker, Kubernetes on-premise, CI/CD with promotion gates, GitHub, Copado</dd></div>
+<div><dt>Salesforce</dt><dd>Apex, OmniStudio, Financial Services Cloud, Experience Cloud, Data Cloud, Agentforce, MuleSoft</dd></div>
+</dl>
+</section>
+</div></div>
+<div class="chapter" id="contact"><div class="wrap">
+<section class="bay" aria-labelledby="h-contact">
+<div class="contact">
+<div class="bay-head">
+<span class="plate">Contact</span>
+<h2 id="h-contact">Putting AI to work somewhere that has rules? Talk to me.</h2>
+<p>Based in Dallas. Open to roles in DFW, remote, or a move.</p>
+</div>
+<dl class="reach">
+<div><dt>Email</dt><dd><span id="email">jayeshkk.mit@gmail.com</span><button type="button" class="copy" id="btn-copy">Copy</button></dd></div>
+<div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/jayeshkhattar/">linkedin.com/in/jayeshkhattar</a></dd></div>
+<div><dt>GitHub</dt><dd><a href="https://github.com/jayeshkhattar">github.com/jayeshkhattar</a></dd></div>
+</dl>
+</div>
+</section>
+</div></div>
+</main>
+<footer class="wrap site-foot">
+<p>Bank work is described at the level I describe it publicly. The bank's systems, data and screens are not shown.</p>
+<p>Numbers in the trading platform section come from the MoneyLoop repository as of Sep 29, 2026 and its decision journal for Aug 3 to Sep 1, 2026. MoneyLoop's code is private. No returns, account sizes or source are shown.</p>
+</footer>
+<script>
+(function(){
+function el(tag,cls,text){var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e}
+var reduce=false; try{ reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches }catch(e){}
+function makeConsole(root,cfg){
+if(!root) return;
+function q(r){ return root.querySelector('[data-r="'+r+'"]') }
+var picker=q("picker"), rail=q("rail"), verdict=q("verdict"), list=q("steps"), bPlay=q("play"), bStep=q("step"), bAll=q("all");
+var items=cfg.items, cur=0, shown=0, timer=null, picks=[];
+items.forEach(function(d,i){
+var b=el("button","pick"); b.type="button"; b.id=cfg.prefix+"-pick-"+i; b.setAttribute("aria-pressed","false");
+cfg.pick(b,d);
+b.addEventListener("click",function(){ stop(); select(i,true) });
+picker.appendChild(b); picks.push(b);
+});
+function stop(){ if(timer){ clearInterval(timer); timer=null } }
+function paint(){
+var d=items[cur], nodes=rail.children;
+for(var i=0;i<nodes.length;i++){ var st=cfg.railState(d,i,shown); nodes[i].className=st.cls; nodes[i].setAttribute("aria-label",st.label) }
+var li=list.children;
+for(var j=0;j<li.length;j++){ li[j].classList.toggle("dim", j>=shown) }
+bPlay.textContent = timer ? "Pause" : "Play";
+}
+function select(i,all){
+cur=i; var d=items[i];
+picks.forEach(function(b,j){ b.setAttribute("aria-pressed", String(j===i)) });
+verdict.textContent="";
+verdict.appendChild(el("span","chip "+d.kind,d.chip));
+verdict.appendChild(el("p",null,cfg.summary(d)));
+rail.textContent="";
+var keys=cfg.railKeys(d); rail.style.setProperty("--n", String(keys.length));
+keys.forEach(function(k){ var li=el("li"); li.appendChild(el("i")); li.appendChild(el("span",null,k)); rail.appendChild(li) });
+list.textContent="";
+d.steps.forEach(function(s,n){ var li=el("li","step"); cfg.step(li,s,n); list.appendChild(li) });
+shown = all ? d.steps.length : 0;
+paint();
+}
+function advance(){
+if(shown<items[cur].steps.length) shown++;
+if(shown>=items[cur].steps.length) stop();
+paint();
+}
+bPlay.addEventListener("click",function(){
+if(timer){ stop(); paint(); return }
+if(shown>=items[cur].steps.length) shown=0;
+timer=setInterval(advance,1100); advance();
+});
+bStep.addEventListener("click",function(){
+stop();
+if(shown>=items[cur].steps.length){ shown=0; paint(); return }
+advance();
+});
+bAll.addEventListener("click",function(){ stop(); shown=items[cur].steps.length; paint() });
+select(0,true);
+}
+var P=[
+{name:"Find a deposit opportunity",chip:"Read path",kind:"pass",meta:"question in, answer with sources out",
+sum:"A read-only path. The agent gathers what the bank knows about a client and answers with sources. Nothing is written.",
+steps:[
+{k:"Ask",h:"Ask",tag:"chat UI",p:"A banker asks about a client in the chat. The UI is React and Next.js, and the answer streams back over server-sent events as it is written.",ctl:"every request tagged with its session and user"},
+{k:"Plan",h:"Plan",tag:"LangGraph agent",p:"The agent works out which tools the question needs and in what order. Its state and memory persist in a PostgreSQL checkpointer, so a conversation keeps its state and has an auditable history.",ctl:"persistent state · auditable history"},
+{k:"Tools",h:"Tools",tag:"customer data, transactions",p:"It calls typed tools for the client's profile, financials and transaction history. Inputs and outputs are schema-validated, failures retry, and each tool has only the access it needs.",ctl:"schema validation · retries · scoped credentials · per-call audit log · PII handling"},
+{k:"Retrieve",h:"Retrieve",tag:"documents and policy",p:"Hybrid search over about 4,000 sections from up to 500 documents across three or four internal systems: BM25 plus semantic search, reranked, with relevance thresholds so weak matches are dropped.",ctl:"reranking · relevance thresholds · caching"},
+{k:"Answer",h:"Answer",tag:"structured output",p:"The answer comes back in a fixed structure with its sources attached, so the banker can see where each claim came from.",ctl:"structured-output compliance · source attribution"},
+{k:"Trace",h:"Trace",tag:"Langfuse",p:"Prompts, retrieved evidence, routing decisions, tool calls, latency, token usage and errors are recorded for the whole request.",ctl:"every stage traced"}
+]},
+{name:"Start treasury onboarding",chip:"Action path",kind:"advise",meta:"records get created, so a person approves",
+sum:"An action path. The agent prepares the onboarding records, and a person approves before anything is created.",
+steps:[
+{k:"Ask",h:"Ask",tag:"chat UI",p:"A banker starts treasury onboarding for a client.",ctl:"every request tagged with its session and user"},
+{k:"Plan",h:"Plan",tag:"LangGraph agent",p:"The same agent plans the steps. State is checkpointed in PostgreSQL as it goes.",ctl:"persistent state · auditable history"},
+{k:"Review",h:"Review",tag:"document review, policy retrieval",p:"It reviews the client's documents and retrieves the policy that applies to this onboarding.",ctl:"schema validation · retries · scoped credentials"},
+{k:"Propose",h:"Propose",tag:"onboarding actions",p:"It drafts the onboarding actions: the downstream records a person used to create by hand.",ctl:"typed actions · nothing written yet"},
+{k:"Approve",h:"Approve",tag:"human-approval gate",p:"The workflow stops. A person sees what will be created and has to approve it.",ctl:"human approval before any record changes"},
+{k:"Act",h:"Act",tag:"records created",p:"Approved actions run and the records are created. Longer workflows run on Temporal, with retry and backoff policies and a signal for each human approval.",ctl:"per-call audit log · durable execution"},
+{k:"Trace",h:"Trace",tag:"Langfuse",p:"The whole path, approvals included, is in the trace and the audit history.",ctl:"every stage traced"}
+]},
+{name:"A banker reports a wrong answer",chip:"Fix path",kind:"info",meta:"from a production trace to a gated release",
+sum:"The fix path. From a production trace to a change that has to pass the evaluation gate before it is promoted.",
+steps:[
+{k:"Report",h:"Report",tag:"a banker",p:"A banker reports an answer that looks wrong.",ctl:"session and user are already on the trace"},
+{k:"Trace",h:"Trace",tag:"Langfuse",p:"I find the session and read what happened: the prompt, what was retrieved, which tools ran, and where the time went.",ctl:"production traces"},
+{k:"Reproduce",h:"Reproduce",tag:"root cause",p:"I reproduce it from the trace and find the part that failed: retrieval, orchestration or a tool.",ctl:"defect reproduced before anything is changed"},
+{k:"Fix",h:"Fix",tag:"branch",p:"The fix goes in on a branch and through code review.",ctl:"reviewed change"},
+{k:"Evaluate",h:"Evaluate",tag:"120-question gate",p:"CI runs the evaluation set: 120 representative banker and treasury questions, scored on relevance, grounding, source attribution, tool selection and structured-output compliance. A failing gate doesn't promote.",ctl:"promotion gate in CI/CD"},
+{k:"Sign off",h:"Sign off",tag:"bank experts",p:"Subject-matter experts sign off after the gate passes.",ctl:"expert sign-off"},
+{k:"Promote",h:"Promote",tag:"Kubernetes",p:"The release is promoted on the bank's on-premise Kubernetes platform: dev, then test, then prod.",ctl:"dev → test → prod"}
+]}
+];
+makeConsole(document.getElementById("con-job"),{
+prefix:"job", items:P,
+pick:function(b,d){
+var top=el("div","pick-top"); top.appendChild(el("span","pick-name",d.name)); top.appendChild(el("span","chip "+d.kind,d.chip));
+b.appendChild(top); b.appendChild(el("span","pick-meta",d.meta));
+},
+summary:function(d){ return d.sum },
+railKeys:function(d){ return d.steps.map(function(s){ return s.k }) },
+railState:function(d,i,shown){
+var lit=i<shown;
+return {cls: lit ? (d.steps[i].k==="Approve" ? "advise" : "ok") : "dim", label: d.steps[i].k+": "+(lit ? "shown" : "pending")};
+},
+step:function(li,s,n){
+li.appendChild(el("time",null,"stage "+(n+1)));
+var body=el("div","step-body");
+var h=el("h4",null,s.h); h.appendChild(el("span",null,s.tag)); body.appendChild(h);
+body.appendChild(el("p",null,s.p));
+var c=el("div","ctl"); c.appendChild(el("b",null,"controls")); c.appendChild(document.createTextNode(s.ctl)); body.appendChild(c);
+li.appendChild(body);
+}
+});
+var STAGES=[["signal","Signal"],["judge","Judge"],["select","Select"],["auth","Auth"],["size","Size"],["broker","Broker"],["exit","Exit"]];
+var LAMPS=["KILL_SWITCH","OBSERVE_ONLY","LOSS_LOCK","TARGET_LOCK","SESSION","INSTRUMENT","ALREADY_OPEN","DAY_ENTRY_CAP","STOP_COOLDOWN","RUNWAY","FAKE_MOVE_GATE","AI_STALE_ANCHOR","MAX_OPEN_POSITIONS","SLEEVE_CAP","INVALID_STOP","RUN_LOSS_CAP","MIN_ORDER"];
+var D=[
+{sym:"MU",dir:"long",when:"Mon Aug 10 · 08:50",strat:"opening-range breakout",chip:"Entered",kind:"pass",
+sum:"Clears every check, fills 29 seconds after the signal, and trails out 18 minutes later.",
+rail:{signal:"ok",judge:"ok",select:"ok",auth:"ok",size:"ok",broker:"ok",exit:"ok"},
+steps:[
+{k:"signal",t:"08:50:05",h:"Signal",tag:"strategy worker",p:"The 1-minute bar closes above MU's opening-range high on more than 1.2 times average volume.",
+log:`{"event":"signal","underlying":"MU","direction":"LONG","strategy":"orb","reason":"close 878.85 > OR high 876.46, vol 177425 > 1.2x146503"}`},
+{k:"judge",t:"08:50:05",h:"Model judge",tag:"shadow",p:"The LLM judge reads the tape and says take, confidence 0.72. The verdict is recorded, not enforced.",
+log:`{"event":"signal_judge","underlying":"MU","strategy":"orb","direction":"LONG","verdict":"TAKE","confidence":0.72,"reason":"Early-session breakout has clear upward follow-through with rising highs and no abnormal signal-bar expansion."}`},
+{k:"select",t:"08:50:05",h:"Selection",tag:"proposal pool",p:"The proposal joins the cycle's pool and is ranked against the others. Cluster: semis.",
+log:`{"event":"proposal","proposal_id":"2026-08-10-f8b10ecf-5","strategy":"orb","underlying":"MU","direction":"LONG","source":"mech","regime":"low_vol_compression","cluster":"semis"}`},
+{k:"auth",t:"08:50:34",h:"Authorizer",tag:"guardrails.check_order()",p:"No check objects. Outcome: ENTERED.",lamps:"clear",
+log:`{"event":"decision","proposal_id":"2026-08-10-f8b10ecf-5","outcome":"ENTERED","strategy":"orb","source":"mech","underlying":"MU","direction":"LONG","cluster":"semis"}`},
+{k:"size",t:"08:50:34",h:"Sizing",tag:"risk first",p:"The stop is 2% on MU, which is 4% on MULL, the 2x vehicle. Quantity is the allowed risk divided by that distance.",
+log:`{"event":"sizing_decision","vehicle":"MULL","underlying":"MU","direction":"LONG","leg_leverage":2.0,"stop_pct_underlying":0.02,"stop_pct_vehicle_broker":0.04,"chosen_qty":"redacted","dollar_risk_usd":"redacted"}`},
+{k:"broker",t:"08:50:34",h:"Broker",tag:"fill",p:"Filled in MULL at 18.63, 29 seconds after the signal. The entry is a marketable limit; the stop and target rest at the broker.",
+log:`{"event":"entry","vehicle":"MULL","px":18.63,"strategy":"orb","session":"rth","qty":"redacted","notional":"redacted"}`},
+{k:"exit",t:"09:08:45",h:"Exit",tag:"position manager",p:"The trailing stop closes the position 18 minutes after entry. Nothing left open.",
+log:`{"event":"exit","symbol":"MULL","reason":"TRAIL_STOP","remaining":0,"pnl_usd":"redacted"}`}
+]},
+{sym:"RKLB",dir:"short",when:"Tue Aug 11 · 08:46",strat:"opening-range breakdown",chip:"Entered",kind:"advise",
+sum:"The model judge says skip. It runs in shadow, so the trade goes in. The stop resting at the broker closes it four minutes later.",
+rail:{signal:"ok",judge:"advise",select:"ok",auth:"ok",size:"ok",broker:"ok",exit:"ok"},
+steps:[
+{k:"signal",t:"08:46:05",h:"Signal",tag:"strategy worker",p:"RKLB closes at 75.91, under its opening-range low of 76.01, on volume.",
+log:`{"event":"signal","underlying":"RKLB","direction":"SHORT","strategy":"orb","reason":"close 75.91 < OR low 76.01, vol 277460 > 1.2x214304"}`},
+{k:"judge",t:"08:46:05",h:"Model judge",tag:"shadow",p:"Skip, confidence 0.82. It reads the entry as a chase: price sits in the bottom 6% of the recent tape and 2.3% under VWAP. Recorded, not enforced.",
+log:`{"event":"signal_judge","underlying":"RKLB","strategy":"orb","direction":"SHORT","verdict":"SKIP","confidence":0.82,"reason":"entry_percentile_in_tape is 6.1% for a SHORT and entry_vs_vwap_pct is -2.262%, indicating an extended chase."}`},
+{k:"select",t:"08:46:11",h:"Selection",tag:"proposal pool",p:"Ranked and passed on. A second shadow score rates the setup 54 out of 100 and flags the same chase.",
+log:`{"event":"trade_score_shadow","vehicle":"RKLZ","underlying":"RKLB","composite":54,"denominator":100,"flags":["entry_chased_tape_extreme"],"vetoes":["choppy_tape"]}`},
+{k:"auth",t:"08:46:11",h:"Authorizer",tag:"guardrails.check_order()",p:"No check objects. Outcome: ENTERED. The decision record keeps the judge's skip next to it.",lamps:"clear",
+log:`{"event":"decision","proposal_id":"2026-08-11-792c8822-8","outcome":"ENTERED","strategy":"orb","underlying":"RKLB","direction":"SHORT","cluster":"space","judge_verdict":"SKIP","judge_confidence":0.82}`},
+{k:"size",t:"08:46:11",h:"Sizing",tag:"risk first",p:"Stop at 77.43 on RKLB, 2% away. Target 74.20. That is 4% on RKLZ, the 2x inverse vehicle.",
+log:`{"event":"underlying_signal","underlying":"RKLB","direction":"SHORT","entry_px":75.91,"sl_px":77.43,"tp_px":74.2,"sl_pct":0.02,"tp_pct":0.0225,"vehicle":"RKLZ","leverage":2.0}`},
+{k:"broker",t:"08:46:11",h:"Broker",tag:"fill",p:"Filled in RKLZ at 3.25, six seconds after the signal. Stop and target rest at the broker.",
+log:`{"event":"entry","vehicle":"RKLZ","px":3.25,"strategy":"orb","session":"rth","qty":"redacted","notional":"redacted"}`},
+{k:"exit",t:"08:50:21",h:"Exit",tag:"native bracket",p:"At 08:49 the exit manager polls and says hold. Thirty-two seconds later the stop at the broker fires on its own. Four minutes in, the position is flat.",
+log:`{"event":"exit","symbol":"RKLZ","reason":"SL_BRACKET","native":true,"remaining":0,"pnl_usd":"redacted"}`}
+]},
+{sym:"META",dir:"long",when:"Tue Aug 11 · 09:20",strat:"proposed by the LLM trader",chip:"Cluster cap",kind:"block",
+sum:"The model proposes a trade. Selection refuses it before it reaches the authorizer: the single-name tech cluster is at its limit.",
+rail:{signal:"ok",judge:"dim",select:"block",auth:"dim",size:"dim",broker:"dim",exit:"dim"},
+steps:[
+{k:"signal",t:"09:20:09",h:"Signal",tag:"LLM trader",p:"The LLM trader proposes a long in META, confidence 0.68. Its reasoning is journaled word for word.",
+log:`{"event":"signal","underlying":"META","direction":"LONG","strategy":"ai_trader","confidence":0.68,"reason":"META has sustained momentum above VWAP and the prior-day high, with successive higher closes after the opening-range breakout. It is extended, so this is a momentum continuation entry rather than a pullback entry."}`},
+{k:"select",t:"09:20:09",h:"Selection",tag:"proposal pool",p:"Refused. The single-name tech cluster is already at its limit, and a META position opened at 08:57 is still on. A model proposal gets the same treatment as any other.",
+log:`{"event":"decision","proposal_id":"2026-08-11-792c8822-15","outcome":"PORTFOLIO_CLUSTER_CAP","reason":"tech_single at limit","strategy":"ai_trader","source":"ai","underlying":"META","direction":"LONG","cluster":"tech_single"}`}
+]},
+{sym:"MU",dir:"short",when:"Mon Aug 10 · 09:40",strat:"fair-value-gap retrace",chip:"Rejected",kind:"block",
+sum:"The judge call returns bad JSON. That degrades to pass. Then the authorizer rejects the trade anyway: five positions are already open.",
+rail:{signal:"ok",judge:"advise",select:"ok",auth:"block",size:"dim",broker:"dim",exit:"dim"},
+steps:[
+{k:"signal",t:"09:40:13",h:"Signal",tag:"strategy worker",p:"MU retraces into a bearish fair-value gap and closes back under it.",
+log:`{"event":"signal","underlying":"MU","direction":"SHORT","strategy":"fvg","reason":"bear FVG [873.38,877.57] retrace to 878.01, close 871.25"}`},
+{k:"judge",t:"09:40:13",h:"Model judge",tag:"shadow",p:"The call fails: the model returned something that isn't JSON. Verdict: ERROR. Every AI failure degrades to pass, so the pipeline carries on.",
+log:`{"event":"signal_judge","underlying":"MU","strategy":"fvg","direction":"SHORT","verdict":"ERROR","confidence":0.0,"reason":"","error":"JSONDecodeError: Expecting value: line 1 column 1 (char 0)"}`},
+{k:"select",t:"09:40:13",h:"Selection",tag:"proposal pool",p:"Ranked and passed on. Cluster: semis.",
+log:`{"event":"proposal","proposal_id":"2026-08-10-f8b10ecf-17","strategy":"fvg","underlying":"MU","direction":"SHORT","source":"mech","regime":"low_vol_compression","cluster":"semis"}`},
+{k:"auth",t:"09:40:21",h:"Authorizer",tag:"guardrails.check_order()",p:"Rejected. Every position slot is in use.",lamps:"MAX_OPEN_POSITIONS",
+log:`{"event":"reject","why":"MAX_OPEN_POSITIONS: 5 open","vehicle":"MUD","proposal_id":"2026-08-10-f8b10ecf-17"}`}
+]},
+{sym:"SNDK",dir:"short",when:"Tue Aug 11 · 13:30",strat:"winners engine",chip:"Rejected",kind:"block",
+sum:"The judge says take. The fake-move gate measures a choppy tape and rejects the trade. The model's opinion doesn't outrank the arithmetic.",
+rail:{signal:"ok",judge:"ok",select:"ok",auth:"block",size:"dim",broker:"dim",exit:"dim"},
+steps:[
+{k:"signal",t:"13:30:22",h:"Signal",tag:"winners engine",p:"A winners-engine strategy signals a short in SNDK at 1264.59.",
+log:`{"event":"signal","underlying":"SNDK","direction":"SHORT","strategy":"winners:s0001_gix_trade_manager","reason":"winner s0001_gix_trade_manager short entry 1264.59","u_entry":1264.59,"u_sl":1269.82,"u_tp1":1259.36,"lev":2.0}`},
+{k:"judge",t:"13:30:22",h:"Model judge",tag:"shadow",p:"Take, confidence 0.68. No veto triggered.",
+log:`{"event":"winners_judge","underlying":"SNDK","strategy":"s0001_gix_trade_manager","direction":"SHORT","entry":1264.59,"verdict":"TAKE","confidence":0.68,"reason":"No veto is triggered; the breakout strategy's 1.51 signal_bar_range_vs_avg is not extreme and 95 minutes remain for TP1."}`},
+{k:"select",t:"13:30:22",h:"Selection",tag:"proposal pool",p:"Ranked and passed on. Cluster: semis.",
+log:`{"event":"proposal","proposal_id":"2026-08-11-944f7cc0-4","strategy":"winners:s0001_gix_trade_manager","underlying":"SNDK","direction":"SHORT","source":"winners","regime":"low_vol_compression","cluster":"semis"}`},
+{k:"auth",t:"13:30:43",h:"Authorizer",tag:"guardrails.check_order()",p:"Rejected. The move's efficiency ratio is 0.19 against a floor of 0.35: choppy tape, likely a fake move.",lamps:"FAKE_MOVE_GATE",
+log:`{"event":"reject","why":"FAKE_MOVE_GATE: efficiency_ratio 0.19 < 0.35 — choppy tape, likely a fake move","vehicle":"SNDQ","underlying":"SNDK"}`}
+]}
+];
+makeConsole(document.getElementById("con-ml"),{
+prefix:"ml", items:D,
+pick:function(b,d){
+var top=el("div","pick-top");
+var s=el("span","pick-sym",d.sym); s.appendChild(el("small",null,d.dir.toUpperCase()));
+top.appendChild(s); top.appendChild(el("span","chip "+d.kind,d.chip));
+b.appendChild(top);
+b.appendChild(el("span","pick-meta",d.when+" CT"));
+b.appendChild(el("span","pick-meta long",d.strat));
+},
+summary:function(d){ return d.sym+" "+d.dir+", "+d.strat+". "+d.sum },
+railKeys:function(){ return STAGES.map(function(s){ return s[1] }) },
+railState:function(d,i,shown){
+var key=STAGES[i][0], st=d.rail[key], seen=false;
+for(var k=0;k<shown;k++){ if(d.steps[k].k===key){ seen=true; break } }
+var lit = st!=="dim" && seen;
+var word = st==="dim" ? "not reached" : (lit ? (st==="ok" ? "done" : st==="advise" ? "advisory" : "stopped here") : "pending");
+return {cls: lit ? st : "dim", label: STAGES[i][1]+": "+word};
+},
+step:function(li,s){
+li.appendChild(el("time",null,s.t));
+var body=el("div","step-body");
+var h=el("h4",null,s.h); h.appendChild(el("span",null,s.tag)); body.appendChild(h);
+body.appendChild(el("p",null,s.p));
+if(s.lamps){
+var ul=el("ul","lamps");
+LAMPS.forEach(function(name){
+var st = s.lamps==="clear" ? "clear" : (s.lamps===name ? "fired" : "");
+var la=el("li","lamp"+(st ? " "+st : "")); la.appendChild(el("i")); la.appendChild(el("span",null,name.replace(/_/g," ")));
+if(st==="fired") la.setAttribute("aria-label",name+" fired");
+ul.appendChild(la);
+});
+body.appendChild(ul);
+body.appendChild(el("span","lamp-cap", s.lamps==="clear" ? "Entered means none of these objected." : "The journal records the check that fired. The rest stay dark."));
+}
+var pre=el("pre","log");
+s.log.split(/,(?=")/).forEach(function(part,n,arr){
+pre.appendChild(document.createTextNode(part+(n<arr.length-1 ? "," : "")));
+if(n<arr.length-1) pre.appendChild(document.createElement("wbr"));
+});
+body.appendChild(pre);
+li.appendChild(body);
+}
+});
+// in-page links scroll inside the page
+[].slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function(a){
+a.addEventListener("click",function(e){
+var id=a.getAttribute("href").slice(1), t=id && document.getElementById(id);
+if(!t) return;
+e.preventDefault();
+t.scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"start"});
+});
+});
+// highlight the menu item for the part of the page in view
+var nav=document.querySelector(".topnav");
+var links=[].slice.call(document.querySelectorAll(".topnav a"));
+var parts=links.map(function(a){ return document.getElementById(a.getAttribute("href").slice(1)) });
+var last=null;
+function spy(){
+var y=window.innerHeight*0.35, cur=null;
+parts.forEach(function(p){ if(p && p.getBoundingClientRect().top<=y) cur=p.id });
+var doc=document.documentElement;
+if(window.innerHeight+window.scrollY>=doc.scrollHeight-4 && parts.length) cur=parts[parts.length-1].id;
+if(cur===last) return; last=cur;
+links.forEach(function(a){
+if(a.getAttribute("href")==="#"+cur){
+a.setAttribute("aria-current","true");
+if(nav.scrollWidth>nav.clientWidth) nav.scrollLeft=Math.max(0,a.offsetLeft-nav.offsetLeft-16);
+} else a.removeAttribute("aria-current");
+});
+}
+window.addEventListener("scroll",spy,{passive:true}); window.addEventListener("resize",spy); spy();
+var cp=document.getElementById("btn-copy");
+if(cp) cp.addEventListener("click",function(){
+var t=document.getElementById("email").textContent;
+function ok(){ cp.textContent="Copied"; setTimeout(function(){ cp.textContent="Copy" },1600) }
+function fallback(){ try{ var r=document.createRange(); r.selectNodeContents(document.getElementById("email")); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); cp.textContent="Selected" }catch(e){} }
+try{ navigator.clipboard.writeText(t).then(ok,fallback) }catch(e){ fallback() }
+});
+})();
+</script>
+</body>
+</html>
